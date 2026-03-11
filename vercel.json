@@ -5,10 +5,6 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/api/v1/:path*",
-      "destination": "https://memko-timski-backend.onrender.com/api/v1/:path*"
-    },
-    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
