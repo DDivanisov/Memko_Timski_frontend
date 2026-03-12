@@ -10,7 +10,7 @@ export type LoginResponseType = {
   message: string;
   user: {
     _id: string;
-    currentWorkspace: string;
+    currentWorkSpace: string;
   };
 };
 
