@@ -62,9 +62,9 @@ const SignIn = () => {
         const decodedUrl = returnUrl ? decodeURIComponent(returnUrl) : null;
         navigate(decodedUrl || `/workspace/${user.currentWorkSpace}`);
       },
-      onError: (error: CustomError) => {
+      onError: (error) => {
         toast({
-          title: `Error ${error.errors}`,
+          title: `Error ${error.message} ${error.name}`,
           description: error.message,
           variant: "destructive",
         });
