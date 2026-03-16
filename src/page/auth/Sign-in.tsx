@@ -64,7 +64,7 @@ const SignIn = () => {
       },
       onError: (error) => {
         toast({
-          title: `Error ${error.message} ${error.name}`,
+          title: `Wrong username or password`,
           description: error.message,
           variant: "destructive",
         });
