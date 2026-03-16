@@ -25,6 +25,7 @@ import { useMutation } from "@tanstack/react-query";
 import { loginMutationFn } from "@/lib/api";
 import { toast } from "@/hooks/use-toast";
 import { Loader } from "lucide-react";
+import { CustomError } from "@/types/custom-error.type";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -61,9 +62,9 @@ const SignIn = () => {
         const decodedUrl = returnUrl ? decodeURIComponent(returnUrl) : null;
         navigate(decodedUrl || `/workspace/${user.currentWorkSpace}`);
       },
-      onError: (error) => {
+      onError: (error: CustomError) => {
         toast({
-          title: "Error",
+          title: `Error ${error.errors}`,
           description: error.message,
           variant: "destructive",
         });
